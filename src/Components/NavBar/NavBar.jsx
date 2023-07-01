@@ -32,15 +32,14 @@ export class NavBar extends React.Component {
 
     return (
       <div className="NavBar">
-        <KingsleyLogoContainer />
+        <Link exact to="/">
+          <KingsleyLogoContainer />
+        </Link>
         <div className="Links">
-          <NavLink exact to="/" activeClassName="active">
-            Home
-          </NavLink>
           <a>Find a store nearby</a>
-          <NavLink to="/product" activeClassName="active">
+          <Link to="/product" activeClassName="active">
             Our products
-          </NavLink>
+          </Link>
           <a>About us</a>
           <a>Contact us</a>
           <a

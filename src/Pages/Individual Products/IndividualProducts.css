@@ -1,0 +1,116 @@
+.NaartjieIsorade {
+    padding: 126px 300px;
+}
+
+.Content {
+    padding: 0px 32px 8px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.NaartjiePreview {
+    background-color: #F0FFF8;
+    flex: 20%;
+}
+
+.NutritionalInfo {
+    flex: 20%;
+    border-right: 1px solid rgb(192, 191, 191);
+}
+
+.NutritionalInfo h3 {
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: #756361;
+}
+
+.Isorade {
+    color: rgba(0, 0, 0, 0.567);
+}
+
+.Map {
+    flex: 40%;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.WhereToBuy {
+    display: flex;
+    align-items: center;
+    gap: 96px;
+    border-radius: 20px;
+    color: #756361;
+}
+
+.View a {
+    color: #AD2418;
+    display: flex;
+    align-items: center;
+    gap: 96px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    gap: 100px;
+}
+
+th {
+    /* Figtree/Body */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 30px;
+}
+
+td {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.Warn {
+    color: #005C31;
+    background-color: #F0FFF8;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 8px;
+    width: 80%;
+}
+
+.Depot h4,
+.Depot h5 {
+    font-weight: 300;
+    line-height: 2px;
+}
+
+.Depot {
+    border-bottom: 1px solid rgb(227, 227, 227);
+    padding-bottom: 10px;
+}
+
+.Depot span {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 2px;
+    color: #AD2418;
+    padding-left: 10px;
+}
+
+.Depot .hh {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 2px;
+    color: #AD2418;
+    border-left: 1px solid rgb(174, 172, 172);
+    padding-left: 10px;
+}

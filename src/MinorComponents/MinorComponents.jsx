@@ -6,29 +6,29 @@ import IsoradeGreen from '../images/image 1 (1).png';
 import Dragon from '../images/image 1.png';
 import CarterTea from '../images/image 3 (2).png';
 import IsoradeBlue from '../images/image3(1).png';
-import KingsleyFrameImg from '../images/Frame 10.png';
-import DragonEnergyImg from '../images/Frame 11 (1).png';
-import IsoradeImg from '../images/Frame 12.png';
-import IsoradeImgAlt from '../images/Frame 13.png';
-import BlueBerryImg from '../images/Frame 19.png';
-import BlueberryBigImg from '../images/Frame 19 (7).png';
-import TropicalBigImg from '../images/Frame 19 (9).png';
-import NaartjieImg from '../images/Frame 19 (4).png';
-import MixedBerryImg from '../images/Frame 19 (5).png';
-import GrapeImg from '../images/Frame 19 (6).png';
-import TropicalImg from '../images/Frame 19 (3).png';
-import EnergyDrinkImg from '../images/Frame 19 (1).png';
-import IceTeaImg from '../images/Frame 19 (2).png';
+import KingsleyFrameImg from '../images/Frame 10 (1).png';
+import DragonEnergyImg from '../images/Frame 11 (2).png';
+import IsoradeImg from '../images/Frame 12 (1).png';
+import IsoradeImgAlt from '../images/Frame 10 (1).png';
+import NaartjieMain from '../images/image 1 (2).png';
+import MixedBerryMain from '../images/image 1 (3).png';
+import GrapeMain from '../images/image 1 (4).png';
 import WomanContainerImg from '../images/Frame 5 (1).png';
 import WhiteLogoImg from '../images/image 4 (5).png';
-import EmailImg from '../images/Frame 36.png';
 import PopupImg from '../images/Frame 39.png';
-import GreenBackgroundImg from '../images/MacBook Pro 14_ - 3.png';
-import BestImg from '../images/Frame 5 (2).png';
+import GreenBackgroundImg from '../images/MacBook Pro 14_ - 3 (1).png';
+import BestImg from '../images/Frame 5 (3).png';
 import Location from '../so-map.svg';
 import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 import 'swiper/swiper-bundle.min.css';
 import Products from './../Pages/Products/Products';
 
@@ -124,8 +124,6 @@ export class Brands extends React.Component {
   }
 }
 
-SwiperCore.use([Navigation, Pagination]);
-
 const CustomButton = ({ direction, onClick }) => {
   return (
     <button className={`swiper-button-${direction}`} onClick={onClick}>
@@ -153,15 +151,8 @@ export default function SwiperApi() {
     <>
       <div className="swiper-container">
         <Swiper
-          slidesPerView={3.2}
-          spaceBetween={30}
-          navigation={{
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
-          }}
-          pagination={{
-            clickable: true,
-          }}
+          slidesPerView={3.5}
+          spaceBetween={10}
           ref={swiperRef}
           className="mySwiper"
         >
@@ -178,9 +169,6 @@ export default function SwiperApi() {
             <IsoradeImg2 />
           </SwiperSlide>
         </Swiper>
-
-        <div className="swiper-button-prev" onClick={slidePrev}></div>
-        <div className="swiper-button-next" onClick={slideNext}></div>
       </div>
     </>
   );
@@ -191,7 +179,22 @@ export class KingsleyFrame extends React.Component {
     super(props);
   }
   render() {
-    return <img src={KingsleyFrameImg} className="KingsleyFrameImg" />;
+    const containerStyle = {
+      background: `url("${KingsleyFrameImg}")`,
+    };
+    return (
+      <div className="Relative" style={containerStyle}>
+        <div className="Overlay">
+          <div className="OverlayContent">
+            <h2>Kingsley</h2>
+            <p>
+              Everyone has got flavour! With Kingsley's wide choice of Sparkling
+              Soft Drinks, there's a flavour for everyone!
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 export class DragonEnergy extends React.Component {
@@ -199,7 +202,22 @@ export class DragonEnergy extends React.Component {
     super(props);
   }
   render() {
-    return <img src={DragonEnergyImg} className="KingsleyFrameImg" />;
+    const containerStyle2 = {
+      background: `url("${DragonEnergyImg}")`,
+    };
+    return (
+      <div className="Relative2" style={containerStyle2}>
+        <div className="Overlay">
+          <div className="OverlayContent">
+            <h2>Dragon Energy</h2>
+            <p>
+              Dragon Energy is specifically designed to maximise mental and
+              physical performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 export class Isorade extends React.Component {
@@ -207,7 +225,22 @@ export class Isorade extends React.Component {
     super(props);
   }
   render() {
-    return <img src={IsoradeImg} className="KingsleyFrameImg" />;
+    const containerStyle3 = {
+      background: `url("${IsoradeImg}")`,
+    };
+    return (
+      <div className="Relative3" style={containerStyle3}>
+        <div className="Overlay">
+          <div className="OverlayContent">
+            <h2>Isorade</h2>
+            <p>
+              Isorade drink helps replenish fluids and carbohydrates lost
+              through sports and physical activity.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 export class IsoradeImg2 extends React.Component {
@@ -215,35 +248,48 @@ export class IsoradeImg2 extends React.Component {
     super(props);
   }
   render() {
-    return <img src={IsoradeImgAlt} className="KingsleyFrameImg" />;
-  }
-}
-
-export class Blueberry extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
+    const containerStyle4 = {
+      position: 'relative',
+      backgroundImage: `url("${IsoradeImgAlt}")`,
+      backgroundRepeat: 'no-repeat',
+      width: '419px',
+      height: '220px',
+      backgroundSize: 'cover',
+    };
     return (
-      <div className="Blueberry">
-        <img src={BlueBerryImg} className="KingsleyFrameImg" />
-        <p>Blueberry</p>
-        <a href="#">Where to buy</a>
+      <div className="Relative" style={containerStyle4}>
+        <div className="Overlay">
+          <div className="OverlayContent">
+            <h2>Isorade</h2>
+            <p>
+              Isorade drink helps replenish fluids and carbohydrates lost
+              through sports and physical activity.
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
 }
+
 export class BlueberryBig extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <div className="Blueberry">
-        <img src={BlueberryBigImg} className="KingsleyFrameImg" />
-        <p>Blueberry</p>
-        <a href="#">Where to buy</a>
-      </div>
+      <Link to="/individual-product">
+        <div className="Blueberry">
+          <div className="R12Con">
+            <R12 />
+            <img src={IsoradeBlue} className="R12Img" />
+          </div>
+          <p>Blueberry</p>
+          <a href="#" id="Where">
+            Where to buy
+          </a>
+        </div>
+      </Link>
     );
   }
 }
@@ -254,11 +300,18 @@ export class TropicalBig extends React.Component {
   }
   render() {
     return (
-      <div className="Blueberry">
-        <img src={TropicalBigImg} className="KingsleyFrameImg" />
-        <p>Blueberry</p>
-        <a href="#">Where to buy</a>
-      </div>
+      <Link to="/individual-product">
+        <div className="Blueberry">
+          <div className="R12Con">
+            <R12 />
+            <img src={IsoradeGreen} className="R12Img" />
+          </div>
+          <p>Tropical flavoured sports drink</p>
+          <a href="#" id="Where">
+            Where to buy
+          </a>
+        </div>
+      </Link>
     );
   }
 }
@@ -269,10 +322,33 @@ export class Naartjie extends React.Component {
   }
   render() {
     return (
+      <Link to="/individual-product">
+        <div className="Blueberry">
+          <div className="R12Con">
+            <R12 />
+            <img src={NaartjieMain} className="R12Img" />
+          </div>
+          <p>Naartjie</p>
+          <a href="#" id="Where">
+            Where to buy
+          </a>
+        </div>
+      </Link>
+    );
+  }
+}
+
+export class NaartjieMin extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
       <div className="Blueberry">
-        <img src={NaartjieImg} className="KingsleyFrameImg" />
-        <p>Blueberry</p>
-        <a href="#">Where to buy</a>
+        <div className="R12Con">
+          <R12 />
+          <img src={NaartjieMain} className="R12Img" />
+        </div>
       </div>
     );
   }
@@ -284,11 +360,18 @@ export class MixedBerry extends React.Component {
   }
   render() {
     return (
-      <div className="Blueberry">
-        <img src={MixedBerryImg} className="KingsleyFrameImg" />
-        <p>Blueberry</p>
-        <a href="#">Where to buy</a>
-      </div>
+      <Link to="/individual-product">
+        <div className="Blueberry">
+          <div className="R12Con">
+            <R12 />
+            <img src={MixedBerryMain} className="R12Img" />
+          </div>
+          <p>Mixed berry</p>
+          <a href="#" id="Where">
+            Where to buy
+          </a>
+        </div>
+      </Link>
     );
   }
 }
@@ -299,8 +382,39 @@ export class Grape extends React.Component {
   }
   render() {
     return (
+      <Link to="/individual-product">
+        <div className="Blueberry">
+          <div className="R12Con">
+            <R12 />
+            <img src={GrapeMain} className="R12Img" />
+          </div>
+          <p>Grape</p>
+          <a href="#">Where to buy</a>
+        </div>
+      </Link>
+    );
+  }
+}
+
+export class R12 extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <button className="R12">R12</button>;
+  }
+}
+export class Blueberry extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
       <div className="Blueberry">
-        <img src={GrapeImg} className="KingsleyFrameImg" />
+        <div className="R12Con">
+          <R12 />
+          <img src={IsoradeBlue} className="R12Img" />
+        </div>
         <p>Blueberry</p>
         <a href="#">Where to buy</a>
       </div>
@@ -315,8 +429,11 @@ export class Tropical extends React.Component {
   render() {
     return (
       <div className="Blueberry">
-        <img src={TropicalImg} className="KingsleyFrameImg" />
-        <p>Tropical flavoured sports drink</p>
+        <div className="R12Con">
+          <R12 />
+          <img src={IsoradeGreen} className="R12Img" />
+        </div>
+        <p>Tropical flavored sports drink</p>
         <a href="#">Where to buy</a>
       </div>
     );
@@ -329,7 +446,10 @@ export class EnergyDrink extends React.Component {
   render() {
     return (
       <div className="Blueberry">
-        <img src={EnergyDrinkImg} className="KingsleyFrameImg" />
+        <div className="R12Con">
+          <R12 />
+          <img src={Dragon} className="R12Img" />
+        </div>
         <p>Energy Drink</p>
         <a href="#">Where to buy</a>
       </div>
@@ -343,8 +463,11 @@ export class IceTea extends React.Component {
   render() {
     return (
       <div className="Blueberry">
-        <img src={IceTeaImg} className="KingsleyFrameImg" />
-        <p>Carter's Ice Tea</p>
+        <div className="R12Con">
+          <R12 />
+          <img src={CarterTea} className="R12Img" />
+        </div>
+        <p>Energy Drink</p>
         <a href="#">Where to buy</a>
       </div>
     );
@@ -373,8 +496,6 @@ export class ForYou extends React.Component {
   }
 }
 
-SwiperCore.use([Navigation, Pagination]);
-
 export function SwiperApiProducts() {
   const swiperRef = useRef(null);
 
@@ -396,13 +517,6 @@ export function SwiperApiProducts() {
         <Swiper
           slidesPerView={5.2}
           spaceBetween={30}
-          navigation={{
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
-          }}
-          pagination={{
-            clickable: true,
-          }}
           ref={swiperRef}
           className="mySwiper"
         >
@@ -428,9 +542,6 @@ export function SwiperApiProducts() {
             <EnergyDrink />
           </SwiperSlide>
         </Swiper>
-
-        <div className="swiper-button-prev" onClick={slidePrev}></div>
-        <div className="swiper-button-next" onClick={slideNext}></div>
       </div>
     </>
   );
@@ -512,12 +623,6 @@ export class WhiteLogo extends React.Component {
   }
 }
 
-export class Email extends React.Component {
-  render() {
-    return <img src={EmailImg} />;
-  }
-}
-
 export class Uncover extends React.Component {
   render() {
     return (
@@ -556,9 +661,40 @@ export class UncoverButtons extends React.Component {
 
 export class GreenBackground extends React.Component {
   render() {
+    const containerStyle5 = {
+      background: `url("${GreenBackgroundImg}")`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    };
     return (
-      <div className="GreenBackground">
-        <img src={GreenBackgroundImg} className="GreenBackgroundImg" />
+      <div className="GreenBackground" style={containerStyle5}>
+        <div className="Overlay">
+          <div className="GreenBackgroundContent">
+            <h1>
+              Isorade drink helps replenish fluids, electrolytes and
+              carbohydrates lost through sports and physical activity.
+            </h1>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export class GreenBackground2 extends React.Component {
+  render() {
+    const containerStyle6 = {
+      background: `url("${BestImg}")`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    };
+    return (
+      <div className="GreenBackground2" style={containerStyle6}>
+        <div className="Overlay">
+          <div className="GreenBackground2Content">
+            <h1>Get the best to be your best</h1>
+          </div>
+        </div>
       </div>
     );
   }
@@ -587,11 +723,33 @@ export class ProductsRange extends React.Component {
   }
 }
 
-export class GreenBackground2 extends React.Component {
+export class Email extends React.Component {
   render() {
     return (
-      <div className="GreenBackground">
-        <img src={BestImg} className="GreenBackgroundImg" />
+      <div className="Email">
+        <p>
+          <a href="#">
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              style={{ color: 'white' }}
+              className="Emaili"
+            />
+            Email: info@kingsleybev.co.za
+          </a>
+          <a href="#">
+            <FontAwesomeIcon icon={faPhone} className="Emaili" />
+          </a>
+          <a href="#">
+            {' '}
+            <FontAwesomeIcon icon={faFacebook} className="Emaili" />
+          </a>
+          <a href="#">
+            <FontAwesomeIcon icon={faTwitter} className="Emaili" />
+          </a>
+          <a href="#">
+            <FontAwesomeIcon icon={faInstagram} className="Emaili" />
+          </a>
+        </p>
       </div>
     );
   }
